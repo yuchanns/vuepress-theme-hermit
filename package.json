@@ -1,0 +1,39 @@
+{
+  "name": "vuepress-theme-hermit",
+  "version": "DON'T CHANGE; IT'S SET AUTOMATICALLY DURING DEPLOYMENT",
+  "author": {
+    "name": "yuchanns",
+    "email": "airamusume@gmail.com",
+    "url": "https://github.com/yuchanns"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/yuchanns/vuepress-theme-hermit",
+  "bugs": {
+    "url": "https://github.com/yuchanns/vuepress-theme-hermit/issues",
+    "email": "airamusume@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "git": "git+https://github.com/yuchanns/vuepress-theme-hermit.git"
+  },
+  "keywords": [
+    "blog",
+    "theme",
+    "vuepress"
+  ],
+  "description": "An implementation of Hugo theme hermit in vuepress",
+  "files": [
+    "theme/"
+  ],
+  "main": "theme/index.js",
+  "scripts": {
+    "dev": "vuepress dev example --no-cache --temp .temp",
+    "build": "vuepress build example --dest dist"
+  },
+  "devDependencies": {
+    "vuepress": "^1.3.0"
+  },
+  "dependencies": {
+    "@vuepress/plugin-blog": "^1.9.2"
+  }
+}
