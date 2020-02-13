@@ -5,7 +5,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: undefined
+      default: 'link'
     }
   },
 
