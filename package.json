@@ -23,9 +23,9 @@
   ],
   "description": "An implementation of Hugo theme hermit in vuepress",
   "files": [
-    "theme/"
+    "hermit/"
   ],
-  "main": "theme/index.js",
+  "main": "hermit/index.js",
   "scripts": {
     "dev": "vuepress dev example --no-cache --temp .temp",
     "build": "vuepress build example --dest dist"
