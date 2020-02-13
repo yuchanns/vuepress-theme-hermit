@@ -5,7 +5,7 @@ module.exports = {
 
   description: 'An implementation of Hugo theme hermit in vuepress',
 
-  theme: path.resolve(__dirname, '../../theme'),
+  theme: path.resolve(__dirname, '../../hermit'),
 
   locales: {
     '/': {
