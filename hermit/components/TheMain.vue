@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TransitionFadeSlide>
+    <TransitionFadeSlide :speed="speed">
       <component
         :is="layout"
         :key="$page.path">
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TransitionFadeSlide from '@theme/components/TransitionFadeSlide.vue'
+import TransitionFadeSlide from '@theme/components/TransitionFadeSlide'
 import Vue from 'vue'
 
 export default {
@@ -27,6 +27,10 @@ export default {
         return Vue.component(layout)
       }
       return 'NotFound'
+    },
+
+    speed () {
+      return this.$page.frontmatter.layout === 'Home' ? 'slow' : 'normal'
     }
   }
 }

@@ -1,12 +1,13 @@
 module.exports = (opts, ctx) => {
   Object.assign(opts, Object.assign({
     lang: "en-US",
+    nav: [],
     pagination: {
       lengthPerPage: 10
     }
   }, opts))
 
-  const { pagination, lang } = opts
+  const { pagination, lang, nav } = opts
 
   const plugins = [
     [require('./plugins/blog'), {

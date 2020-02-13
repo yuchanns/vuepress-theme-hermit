@@ -15,3 +15,5 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" src='../styles/global.styl'></style>

@@ -1,5 +1,8 @@
 <template>
-  <div></div>
+  <div>
+    <router-link to='/'>home</router-link>
+    <Content />
+  </div>
 </template>
 
 <script>
