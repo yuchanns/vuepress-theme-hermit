@@ -21,11 +21,18 @@ module.exports = ({
             itemLayout: 'PostItem'
           }
         ]
-      }]
+      }],
+      'vuepress-plugin-smooth-scroll'
     ],
 
     enhanceAppFiles: [
       path.resolve(__dirname, 'enhanceApp.js')
-    ]
+    ],
+
+    extendPageData: page => {
+      if (!('layout' in page.frontmatter)) {
+        page.frontmatter.layout = 'Page'
+      }
+    }
   }
 }

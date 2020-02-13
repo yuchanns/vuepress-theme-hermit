@@ -1,6 +1,5 @@
 <template>
   <div>
-    <router-link to='/'>home</router-link>
     <br>
     <router-link :to='post.path' v-for="(post, k) in $posts" :key="k">{{ post.title }}</router-link>
   </div>

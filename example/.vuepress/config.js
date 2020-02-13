@@ -23,7 +23,7 @@ module.exports = {
 
     nav: [
       { text: 'About', link: '/about/', dirname: 'about' },
-      { text: 'yuchanns', link: 'https://yuchanns.org' }
+      { text: 'Repo', link: 'https://github.com/yuchanns/vuepress-theme-hermit' }
     ],
 
     sns: [
