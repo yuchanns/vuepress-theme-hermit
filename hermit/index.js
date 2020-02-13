@@ -6,21 +6,13 @@ module.exports = (opts, ctx) => {
     }
   }, opts))
 
-  const { pagination } = opts
+  const { pagination, lang } = opts
 
   const plugins = [
-    ['@vuepress/blog', {
-      directories: [
-        {
-          id: 'Posts',
-          dirname: '_posts',
-          path: '/posts',
-          itemPermalink: '/posts/:year/:month/:day/:slug',
-          pagination: pagination,
-          layout: 'Post',
-          itemLayout: 'PostItem'
-        }
-      ]
+    [require('./plugins/blog'), {
+      dirname: '_posts',
+      pagination: pagination,
+      lang: lang
     }]
   ]
 
