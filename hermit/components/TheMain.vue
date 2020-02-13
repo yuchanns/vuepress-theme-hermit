@@ -1,17 +1,24 @@
 <template>
   <div>
-    <component
-      :is="layout"
-      :key="$page.path">
-    </component>
+    <TransitionFadeSlide>
+      <component
+        :is="layout"
+        :key="$page.path">
+      </component>
+    </TransitionFadeSlide>
   </div>
 </template>
 
 <script>
+import TransitionFadeSlide from '@theme/components/TransitionFadeSlide.vue'
 import Vue from 'vue'
 
 export default {
   name: 'TheMain',
+
+  components: {
+    TransitionFadeSlide
+  },
 
   computed: {
     layout () {

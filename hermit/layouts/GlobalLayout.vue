@@ -1,5 +1,4 @@
-  
-<template>
+  <template>
   <div id="vuepress-theme-hermit">
     <TheMain />
   </div>

@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <router-link to='/posts/'>posts</router-link>
+  </div>
 </template>
 
 <script>

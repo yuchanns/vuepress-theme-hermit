@@ -14,7 +14,7 @@ module.exports = ({
           {
             id: 'Posts',
             dirname: dirname,
-            path: '/posts',
+            path: '/posts/',
             itemPermalink: '/posts/:year/:month/:day/:slug',
             pagination: pagination,
             layout: 'Post',
