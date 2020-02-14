@@ -4,7 +4,7 @@
       class="site-footer section-inner thin"
       v-if="footerShow">
       <p>© {{ year }} <a :href="$themeConfig.author.url" target="_blank" rel="nofollow me noopener noreferrer">{{ $themeConfig.author.name }}</a> · <a href="https://github.com/yuchanns/vuepress-theme-hermit/blob/master/LICENSE" target="_blank" rel="nofollow me noopener noreferrer">MIT LICENSE</a></p>
-      <p>Made with <a href="http://vuepress.vuejs.org/" target="_blank" rel="nofollow me noopener noreferrer">Vueperss</a> · Theme <a href="https://github.com/yuchanns/vuepress-theme-hermit" target="_blank" rel="nofollow me noopener noreferrer">Hermit</a> · <SvgIcon type="rss" /></p>
+      <p>Made with <a href="http://vuepress.vuejs.org/" target="_blank" rel="nofollow me noopener noreferrer">Vueperss</a> · Theme <a href="https://github.com/yuchanns/vuepress-theme-hermit" target="_blank" rel="nofollow me noopener noreferrer">Hermit</a><template v-if="$service.feed.rss"> · <a href="/rss.xml" target="_blank"><SvgIcon type="rss" /></a></template></p>
     </footer>
   </TransitionAnimate>
 </template>

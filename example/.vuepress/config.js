@@ -51,7 +51,7 @@ module.exports = {
     ],
 
     pagination: {
-      lengthPerPage: 5
+      lengthPerPage: 10
     },
   }
 }

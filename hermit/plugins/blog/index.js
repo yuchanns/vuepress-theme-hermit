@@ -20,7 +20,10 @@ module.exports = ({
             layout: 'Post',
             itemLayout: 'PostItem'
           }
-        ]
+        ],
+        feed: {
+          canonical_base: 'vuepress-theme-hermit.yuchanns.org'
+        }
       }],
       'vuepress-plugin-smooth-scroll'
     ],
