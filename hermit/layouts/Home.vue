@@ -26,8 +26,8 @@
       </nav>
     </div>
     <div class="home-footer">
-        <p>© {{ year }} <a :href="$themeConfig.author.url" target="_blank" rel="nofollow me noopener noreferrer">{{ $themeConfig.author.name }}</a> · <a href="https://github.com/yuchanns/vuepress-theme-hermit/blob/master/LICENSE" target="_blank" rel="nofollow me noopener noreferrer">MIT LICENSE</a> · <SvgIcon type="rss" /></p>
-      </div>
+      <p>© {{ year }} <a :href="$themeConfig.author.url" target="_blank" rel="nofollow me noopener noreferrer">{{ $themeConfig.author.name }}</a> · <a href="https://github.com/yuchanns/vuepress-theme-hermit/blob/master/LICENSE" target="_blank" rel="nofollow me noopener noreferrer">MIT LICENSE</a> · <SvgIcon type="rss" /></p>
+    </div>
   </div>
 </template>
 

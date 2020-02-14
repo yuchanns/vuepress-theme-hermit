@@ -1,23 +1,21 @@
 <template>
-  <div>
-    <TransitionFadeSlide :speed="speed">
-      <component
-        :is="layout"
-        :key="$page.path">
-      </component>
-    </TransitionFadeSlide>
-  </div>
+  <TransitionAnimate>
+    <component
+      :is="layout"
+      :key="$page.path">
+    </component>
+  </TransitionAnimate>
 </template>
 
 <script>
-import TransitionFadeSlide from '@theme/components/TransitionFadeSlide'
+import TransitionAnimate from '@theme/components/TransitionAnimate'
 import Vue from 'vue'
 
 export default {
   name: 'TheMain',
 
   components: {
-    TransitionFadeSlide
+    TransitionAnimate
   },
 
   computed: {
@@ -27,10 +25,6 @@ export default {
         return Vue.component(layout)
       }
       return 'NotFound'
-    },
-
-    speed () {
-      return this.$page.frontmatter.layout === 'Home' ? 'slow' : 'normal'
     }
   }
 }

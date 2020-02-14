@@ -2,6 +2,17 @@ html
   line-height 1.6
   letter-spacing .06em
   background-color $accentColor
+
+button
+input
+optgroup
+select
+textarea
+  font-size 100%
+  font-family inherit
+  line-height 1.15
+  margin 0
+
 body
 button
 input
@@ -14,7 +25,7 @@ body
   margin 0
 
 ::-webkit-scrollbar
-  width 8px
+  width 0
   height 8px
   background $scrollColor
   &-thumb
@@ -28,3 +39,6 @@ a
   transition-duration .4s
   transition-timing-function ease-out
   background-color transparent
+  &:hover
+    color $hoverColor
+    text-shadow 0 0 1px $hoverColor
