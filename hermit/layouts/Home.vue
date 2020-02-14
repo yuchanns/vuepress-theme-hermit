@@ -51,7 +51,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~@theme/styles/common.styl'
 h1
   font-size 2em
 

@@ -42,8 +42,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~@theme/styles/common.styl'
-
 .error-404
   flex-direction row
   line-height normal

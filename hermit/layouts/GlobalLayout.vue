@@ -2,9 +2,7 @@
   <div id="vuepress-theme-hermit">
     <TheHeader />
     <TheMain />
-    <!-- <TransitionAnimate>
-      <TheFooter />
-    </TransitionAnimate> -->
+    <TheFooter />
   </div>
 </template>
 
@@ -12,7 +10,6 @@
 import TheHeader from '@theme/components/TheHeader'
 import TheMain from '@theme/components/TheMain'
 import TheFooter from '@theme/components/TheFooter'
-import TransitionAnimate from '@theme/components/TransitionAnimate'
 
 export default {
   name: 'vuepress-theme-hermit',
@@ -20,8 +17,7 @@ export default {
   components: {
     TheHeader,
     TheMain,
-    TheFooter,
-    TransitionAnimate
+    TheFooter
   }
 }
 </script>
