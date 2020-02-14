@@ -39,3 +39,6 @@ Just run `yarn add vuepress-theme-hermit`.
 ## MANY THANKS
 * [Hugo Hermit](https://github.com/Track3/hermit)
 * [Vuepress](http://vuepress.vuejs.org/)
+
+## LICENCE
+[MIT](https://github.com/yuchanns/vuepress-theme-hermit/blob/master/LICENSE)© @[yuchanns](https://github.com/yuchanns)
