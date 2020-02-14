@@ -51,17 +51,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '~@theme/styles/common.styl'
 h1
   font-size 2em
-.spotlight
-  display flex
-  min-height 98vh
-  flex-direction column
-  align-items center
-  justify-content center
-  max-width 93%
-  margin auto
-  font-size 1.5em
 
 .home
   &-center
