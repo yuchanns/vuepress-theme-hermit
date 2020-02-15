@@ -10,7 +10,6 @@ services:
     volumes: 
       - ./hermit:/app/hermit
       - ./package.json:/app/package.json
-      - ./yarn.lock:/app/yarn.lock
       - ./example:/app/example
     networks: 
       - code-network
