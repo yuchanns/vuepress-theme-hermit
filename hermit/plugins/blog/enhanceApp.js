@@ -61,19 +61,22 @@ export default ({ Vue }) => {
         let yearsPosts = {}
         pages.filter(page => {
           return page.id === 'Posts'
-        }).sort((a, b) => {
-          return compareDesc(a.frontmatter.date, b.frontmatter.date)
-        }).slice(current, current + this.$themeConfig.pagination.lengthPerPage).map(page => {
-          const year = getYear(page.frontmatter.date)
-          if (!(year in yearsPosts)) {
-            yearsPosts[year] = []
-          }
-          page.frontmatter.formatDate = format(page.frontmatter.date, 'MMM D')
-          yearsPosts[year].push(page)
         })
+          .sort((a, b) => {
+            return compareDesc(a.frontmatter.date, b.frontmatter.date)
+          })
+          .slice(current, current + this.$themeConfig.pagination.lengthPerPage)
+          .map(page => {
+            const year = getYear(page.frontmatter.date)
+            if (!(year in yearsPosts)) {
+              yearsPosts[year] = []
+            }
+            page.frontmatter.formatDate = format(page.frontmatter.date, 'MMM D')
+            yearsPosts[year].push(page)
+          })
         const years = Object.keys(yearsPosts).sort((a, b) => {
-          return a - b
-        }).reverse()
+          return b - a
+        })
 
         return { years: years, yearsPosts: yearsPosts }
       }
