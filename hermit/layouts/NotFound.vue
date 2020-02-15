@@ -63,7 +63,7 @@ p.img-404
       border 2px solid $keyColor
       border-radius 5px
       padding 5px
-      transition-property color border-color
+      transition-property color, border-color
       &:first-child
         margin-right 1em
       svg

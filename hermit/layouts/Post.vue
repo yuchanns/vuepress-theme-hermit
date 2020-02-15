@@ -16,13 +16,19 @@
         </li>
       </ul>
     </div>
+    <Pagination /> 
   </main>
 </template>
 
 <script>
-// TODO: pagination
+import Pagination from '@theme/components/Pagination'
+
 export default {
-  name: 'Post'
+  name: 'Post',
+
+  components: {
+    Pagination
+  }
 }
 </script>
 

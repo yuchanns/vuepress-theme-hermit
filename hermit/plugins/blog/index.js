@@ -6,6 +6,17 @@ module.exports = ({
   lang = 'en-US',
   service = {}
 }) => {
+  Object.assign(pagination, {
+    layout: 'Post',
+    // getPaginationPageTitle: pageNumber => {
+    //   return `${lang.home}`
+    // },
+    sorter: (prev, next) => {
+      const { compareAsc } = require('date-fns')
+      return compareAsc(next.frontmatter.date, prev.frontmatter.date)
+    }
+  })
+
   return {
     name: '@theme-hermit/vuepress-plugin-blog',
 

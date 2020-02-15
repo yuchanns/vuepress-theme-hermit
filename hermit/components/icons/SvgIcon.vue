@@ -6,6 +6,12 @@ export default {
     type: {
       type: String,
       default: 'link'
+    },
+    svg: {
+      type: Object,
+      default: () => {
+        return {}
+      }
     }
   },
 
@@ -120,11 +126,18 @@ export default {
         { name: 'line', attrs: { x1: 3, y1: 12, x2: 21, y2: 12 } },
         { name: 'line', attrs: { x1: 3, y1: 6, x2: 21, y2: 6} },
         { name: 'line', attrs: { x1: 3, y1: 18, x2: 21, y2: 18 } }
+      ],
+      'chevron-left': [
+        { name: 'path', attrs: { d: 'M5.5 3L7 4.5 3.25 8 7 11.5 5.5 13l-5-5 5-5z', 'fill-rule': 'evenodd' } }
+      ],
+      'chevron-right': [
+        { name: 'path', attrs: { d: 'M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3l5 5z', 'fill-rule': 'evenodd' } }
       ]
     }
   },
 
   render (h) {
+    Object.assign(this.svgAttrs, this.svg)
     const childElements = this[this.type]
     return h(
       'svg',

@@ -11,6 +11,11 @@ Under rapid development. Do not take any chance on produce environment.
 
 ~~Now it has stable version. Enjoy having it!~~
 
+## FETCH THEME
+Just run `yarn add vuepress-theme-hermit`.
+
+Seek for [@document]()
+
 ## CONTRIBUTE
 First clone the repo:
 ```sh
@@ -32,9 +37,6 @@ docker-compose stop
 docker-compose rm -f
 ```
 Done.
-
-## FETCH THEME
-Just run `yarn add vuepress-theme-hermit`.
 
 ## MANY THANKS
 * [Hugo Hermit](https://github.com/Track3/hermit)
