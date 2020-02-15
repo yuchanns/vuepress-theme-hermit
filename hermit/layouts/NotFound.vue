@@ -16,14 +16,13 @@
 
 <script>
 import NotFoundIcon from '@theme/components/icons/NotFoundIcon'
-import SvgIcon from '@theme/components/icons/SvgIcon'
+import _ from 'lodash'
 
 export default {
   name: 'NotFound',
 
   components: {
-    NotFoundIcon,
-    SvgIcon
+    NotFoundIcon
   },
 
   computed: {
@@ -34,8 +33,7 @@ export default {
         'That\'s a Four-Oh-Four.',
         'Oops, page not found.'
       ]
-      const index = Math.floor(Math.random() * (hints.length))
-      return hints[index]
+      return _.sample(hints)
     }
   }
 }
@@ -45,12 +43,21 @@ export default {
 .error-404
   flex-direction row
   line-height normal
+  @media (max-width $mobileWidth)
+    flex-direction column
+    text-align center
 
 p.img-404
   margin 0
+  svg
+    width 180px
+    max-width 100%
+    height auto
 
 .banner-404
   margin-left 2em
+  @media (max-width $mobileWidth)
+    margin 0
   h1
     font-size 3em
     margin .5rem 0

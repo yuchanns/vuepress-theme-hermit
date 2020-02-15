@@ -47,15 +47,14 @@
 
 <script>
 import TransitionAnimate from '@theme/components/TransitionAnimate'
-import SvgIcon from '@theme/components/icons/SvgIcon'
 import MobileMenu from '@theme/components/MobileMenu'
+import _ from 'lodash'
 import 'animate.css'
 
 export default {
   name: 'TheHeader',
 
   components: {
-    SvgIcon,
     MobileMenu,
     TransitionAnimate
   },
@@ -72,7 +71,7 @@ export default {
     }
   },
   methods: {
-    detectScroll () {
+    detectScroll: _.throttle(function () {
       const st = window.pageYOffset || document.documentElement.scrollTop
       if (st > this.lastScroll) {
         this.hide = true
@@ -80,7 +79,7 @@ export default {
         this.hide = false
       }
       this.lastScroll = st <= 0 ? 0 : st
-    }
+    }, 500)
   },
   mounted () {
     this.lastScroll = window.pageYOffset || document.documentElement.scrollTop

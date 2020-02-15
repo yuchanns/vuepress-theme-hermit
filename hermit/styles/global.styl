@@ -1,4 +1,5 @@
-@import '~@theme/styles/hermit.styl' 
+@import '~@theme/styles/_content.styl' 
+@import '~@theme/styles/_hermit.styl' 
 html
   line-height 1.6
   letter-spacing .06em
@@ -48,6 +49,9 @@ a
     color $hoverColor
     text-shadow 0 0 1px $hoverColor
 
+img
+  border-style none
+
 .spotlight
   display flex
   min-height 100vh
@@ -66,3 +70,9 @@ a
 .thin
   max-width 720px
   margin auto
+
+.site-main
+  @media (min-width 800px)
+    margin-top 3em
+  @media (min-width 960px)
+    margin-top 6em

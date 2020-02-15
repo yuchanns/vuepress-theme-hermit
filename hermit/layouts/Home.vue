@@ -32,15 +32,10 @@
 </template>
 
 <script>
-import SvgIcon from '@theme/components/icons/SvgIcon'
 import { format } from 'date-fns'
 
 export default {
   name: 'Home',
-
-  components: {
-    SvgIcon
-  },
 
   computed: {
     year () {

@@ -11,14 +11,8 @@
   </div>
 </template>
 <script>
-import SvgIcon from '@theme/components/icons/Svgicon'
-
 export default {
-  name: 'Pagination',
-
-  components: {
-    SvgIcon
-  }
+  name: 'Pagination'
 }
 </script>
 

@@ -1,0 +1,116 @@
+.content
+  .header-anchor
+    float left
+    margin-left -20px
+
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
+    &:hover
+      a
+        &.header-anchor
+          svg
+            visibility visible
+  a
+    word-wrap break-word
+    border none
+    box-shadow inset 0 -4px 0 #018574
+    transition-property box-shadow
+    transition-duration .1s
+    &:hover
+      box-shadow inset 0 -1em 0 #018574
+    &.header-anchor
+      box-shadow none
+      &:hover
+        background 0 0
+        color #018574
+        opacity 1
+      svg
+        display inline-block
+        width 14px
+        height 14px
+        vertical-align baseline
+        visibility hidden
+  img
+    display block
+    max-width 100%
+    height auto
+    margin auto
+    border-radius 4px
+
+  hr
+    box-sizing content-box
+    height 0
+    overflow visible
+    opacity: .2
+    border-width 0 0 5px
+    border-style dashed
+    background transparent
+    width 50%
+    margin 1.8em auto
+  blockquote
+    border-left .25em solid
+    margin 1em
+    padding 0 1em
+    font-style italic
+  ul
+  ol
+    padding 0
+    margin-left 1.8em
+    li
+      p
+        margin-top 0
+        margin-bottom 0
+  .highlight pre
+  pre
+    padding .7em 1.1em
+    background-color #2c3e50;
+    border-radius 4px
+    overflow auto
+  pre
+    word-wrap normal
+    &>code
+      padding 0
+      margin 0
+      font-size 100%
+      word-break normal
+      white-space pre
+      background transparent
+      border 0
+    code
+    tt
+      display inline
+      max-width auto
+      padding 0
+      margin 0
+      overflow visible
+      line-height inherit 
+      word-wrap normal
+      background inherit
+      border 0
+
+  code
+  tt
+    padding 0 3px
+    margin 0 4px
+    background-color #7d828a
+    color #eee
+    border-radius 3px
+    letter-spacing normal
+
+  table
+    border-collapse collapse
+    border-spacing 0
+    empty-cells show
+    width 100%
+    max-width 100%
+    th
+      font-weight 700
+      vertical-align bottom
+    th
+    td
+      padding 1.5%
+      border 1px solid

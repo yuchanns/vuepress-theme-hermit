@@ -1,7 +1,28 @@
 import getYear from 'date-fns/get_year'
 import { format, compareDesc } from 'date-fns'
+import SvgIcon from '@theme/components/icons/SvgIcon'
 
 export default ({ Vue }) => {
+  Vue.component('SvgIcon', {
+    functional: true,
+
+    props: {
+      type: {
+        type: String,
+        default: 'link'
+      }
+    },
+
+    render(h, { props, parent }) {
+      if (parent._isMounted) {
+        return h(SvgIcon, { props: props })
+      } else {
+        parent.$once('hook:mounted', () => {
+          parent.$forceUpdate()
+        })
+      }
+    }
+  })
   Vue.mixin({
     computed: {
       $posts () {

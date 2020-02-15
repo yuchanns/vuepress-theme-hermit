@@ -11,15 +11,13 @@
 
 <script>
 import TransitionAnimate from '@theme/components/TransitionAnimate'
-import SvgIcon from '@theme/components/icons/SvgIcon'
 import { format } from 'date-fns'
 
 export default {
   name: 'TheFooter',
 
   components: {
-    TransitionAnimate,
-    SvgIcon
+    TransitionAnimate
   },
 
   computed: {

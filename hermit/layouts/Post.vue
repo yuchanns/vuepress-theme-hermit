@@ -33,22 +33,21 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.site-main
-  @media (min-width 800px)
-    margin-top 3em
-  @media (min-width 960px)
-    margin-top 6em
-
 .posts
   &-group
     display flex
     margin-bottom 1.9em
     line-height normal
+    @media (max-width 760px)
+      display block
+      margin -6px 0 4px
     .post-year
       padding-top 6px
       margin-right 1.8em
       font-size 1.6em
       opacity .6
+      @media (max-width 760px)
+        margin -6px 0 4px
     .post-item
       border-bottom 1px $dashedColor dashed
       a
