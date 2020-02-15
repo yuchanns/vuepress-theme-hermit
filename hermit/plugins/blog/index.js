@@ -1,6 +1,7 @@
 const path = require('path')
 const markdownItAnchor = require('../markdown-it/anchor')
 const markdownItLink = require('../markdown-it/link')
+const markdownItLazyImage = require('../markdown-it/lazy-image')
 const { format } = require('date-fns')
 
 module.exports = ({
@@ -48,6 +49,7 @@ module.exports = ({
     extendMarkdown: md => {
       md.use(markdownItAnchor)
       md.use(markdownItLink)
+      md.use(markdownItLazyImage)
     },
 
     extendPageData: page => {

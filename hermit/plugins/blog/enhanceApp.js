@@ -1,8 +1,10 @@
 import getYear from 'date-fns/get_year'
 import { format, compareDesc } from 'date-fns'
+import { VLazyImagePlugin } from 'v-lazy-image'
 import SvgIcon from '@theme/components/icons/SvgIcon'
 
 export default ({ Vue }) => {
+  Vue.use(VLazyImagePlugin)
   Vue.component('SvgIcon', {
     functional: true,
 
