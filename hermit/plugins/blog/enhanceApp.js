@@ -1,10 +1,38 @@
 import getYear from 'date-fns/get_year'
 import { format, compareDesc } from 'date-fns'
 import { VLazyImagePlugin } from 'v-lazy-image'
+import VueLazyload from 'vue-lazyload'
 import SvgIcon from '@theme/components/icons/SvgIcon'
+import LazyVideo from '@theme/components/LazyVideo'
 
 export default ({ Vue }) => {
+  // use lazyimage
   Vue.use(VLazyImagePlugin)
+  Vue.use(VueLazyload, {
+    lazyComponent: true,
+  })
+  // create lazyvideo
+  Vue.component('LazyVideo', {
+    functional: true,
+
+    props: {
+      src: {
+        type: String,
+        default: ''
+      }
+    },
+
+    render(h, { props, parent }) {
+      if (parent._isMounted) {
+        return h(LazyVideo, { props: props })
+      } else {
+        parent.$once('hook:mounted', () => {
+          parent.$forceUpdate()
+        })
+      }
+    }
+  })
+  // create svgicon
   Vue.component('SvgIcon', {
     functional: true,
 
@@ -15,7 +43,7 @@ export default ({ Vue }) => {
       }
     },
 
-    render(h, { props, parent }) {
+    render (h, { props, parent }) {
       if (parent._isMounted) {
         return h(SvgIcon, { props: props })
       } else {
