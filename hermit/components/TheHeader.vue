@@ -21,8 +21,15 @@
           </div>
           <div class="hdr-right hdr-icons">
             <button
+              @click="showBg"
+              class="img-btn hdr-btn"
+              v-if="$page.frontmatter.img">
+              <SvgIcon type="image" />
+            </button>
+            <button
               @click="switchToc"
               class="toc-btn hdr-btn desktop-only-ib"
+              style="margin-left: 0;"
               v-if="tocShow">
               <SvgIcon type="list" />
             </button>
@@ -48,12 +55,18 @@
       leave-active-class="animated fast bounceOutRight">
       <MobileMenu v-if="show" />
     </transition>
+    <Background
+      @showBg="showBg"
+      :show="bg"
+      v-if="$page.frontmatter.img"
+      :src="$page.frontmatter.img" />
   </div>
 </template>
 
 <script>
 import TransitionAnimate from '@theme/components/TransitionAnimate'
 import MobileMenu from '@theme/components/MobileMenu'
+import Background from '@theme/components/Background'
 import _ from 'lodash'
 import 'animate.css'
 
@@ -62,14 +75,16 @@ export default {
 
   components: {
     MobileMenu,
-    TransitionAnimate
+    TransitionAnimate,
+    Background
   },
 
   data () {
     return {
       show: false,
       lastScroll: 0,
-      hide: false
+      hide: false,
+      bg: false
     }
   },
   computed: {
@@ -92,6 +107,9 @@ export default {
     }, 500),
     switchToc () {
       this.$emit('switchToc')
+    },
+    showBg () {
+      this.bg = !this.bg
     }
   },
   mounted () {
@@ -147,7 +165,6 @@ export default {
 
 .menu-btn
   display none
-  margin-left .6em
   cursor pointer
   @media (max-width $mobileWidth)
     display inline-block

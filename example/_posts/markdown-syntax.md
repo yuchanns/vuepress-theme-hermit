@@ -1,6 +1,7 @@
 ---
 title: Markdown Syntax Guide
 date: 2020-2-13 15:15:00
+img: /images/atelier-ryza.original.jpg
 tags:
   - markdown
   - css

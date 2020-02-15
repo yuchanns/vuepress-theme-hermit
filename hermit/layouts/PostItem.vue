@@ -35,20 +35,21 @@
 </template>
 
 <script>
+// TODO: related-posts and comments
 import Toc from '@theme/components/Toc'
 
 export default {
   name: 'PostItem',
+
+  components: {
+    Toc
+  },
 
   props: {
     toc: {
       type: Boolean,
       default: false
     }
-  },
-
-  components: {
-    Toc
   }
 }
 </script>
