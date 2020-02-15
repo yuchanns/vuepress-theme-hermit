@@ -20,6 +20,12 @@
             </nav>
           </div>
           <div class="hdr-right hdr-icons">
+            <button
+              @click="switchToc"
+              class="toc-btn hdr-btn desktop-only-ib"
+              v-if="tocShow">
+              <SvgIcon type="list" />
+            </button>
             <span class="hdr-social">
               <a 
                 :href="sns.url"
@@ -58,6 +64,7 @@ export default {
     MobileMenu,
     TransitionAnimate
   },
+
   data () {
     return {
       show: false,
@@ -68,6 +75,9 @@ export default {
   computed: {
     headerShow () {
       return !(this.$page.frontmatter.layout === 'Home' || !this.$page.frontmatter.layout)
+    },
+    tocShow () {
+      return this.$page.frontmatter.layout === 'PostItem'
     }
   },
   methods: {
@@ -79,7 +89,10 @@ export default {
         this.hide = false
       }
       this.lastScroll = st <= 0 ? 0 : st
-    }, 500)
+    }, 500),
+    switchToc () {
+      this.$emit('switchToc')
+    }
   },
   mounted () {
     this.lastScroll = window.pageYOffset || document.documentElement.scrollTop
@@ -129,6 +142,8 @@ export default {
     border none
     background 0 0
     padding 0
+    margin-left .4em
+    cursor pointer
 
 .menu-btn
   display none
@@ -141,4 +156,9 @@ export default {
   margin 0 auto
   max-width 1200px
   width 93%
+
+.desktop-only-ib
+  display none
+  @media (min-width 1300px)
+    display inline-block
 </style>

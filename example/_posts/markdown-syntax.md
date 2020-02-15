@@ -168,7 +168,7 @@ The killer feature of `markdown-it` is very effective support of
 [syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
 
 
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
+### Emojies
 
 > Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
 >
@@ -177,23 +177,23 @@ The killer feature of `markdown-it` is very effective support of
 see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
 
 
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
+### Subscript / Superscript
 
 - 19^th^
 - H~2~O
 
 
-### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
+### ins
 
 ++Inserted text++
 
 
-### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
+### mark
 
 ==Marked text==
 
 
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
+### Footnotes
 
 Footnote 1 link[^first].
 
@@ -210,7 +210,7 @@ Duplicated footnote reference[^second].
 [^second]: Footnote text.
 
 
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
+### Definition lists
 
 Term 1
 
@@ -235,7 +235,7 @@ Term 2
   ~ Definition 2b
 
 
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
+### Abbreviations
 
 This is HTML abbreviation example.
 
@@ -243,7 +243,7 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 
 *[HTML]: Hyper Text Markup Language
 
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
+### Custom containers
 
 ::: warning
 *here be dragons*

@@ -1,8 +1,9 @@
 const path = require('path')
+const { format } = require('date-fns')
 const markdownItAnchor = require('../markdown-it/anchor')
 const markdownItLink = require('../markdown-it/link')
 const markdownItLazyImage = require('../markdown-it/lazy-image')
-const { format } = require('date-fns')
+const readingTime = require('./reading-time')
 
 module.exports = ({
   dirname = '_posts',
@@ -39,7 +40,8 @@ module.exports = ({
         ],
         ...service
       }],
-      'vuepress-plugin-smooth-scroll'
+      'vuepress-plugin-smooth-scroll',
+      'vuepress-plugin-table-of-contents'
     ],
 
     enhanceAppFiles: [
@@ -64,6 +66,13 @@ module.exports = ({
       }
       if ('date' in page.frontmatter) {
         page.frontmatter.metaDate = format(page.frontmatter.date, 'MMM D, YYYY')
+        page.frontmatter.calendar = format(page.frontmatter.date, 'YYYY-MM-DD HH:mm ZZ')
+      }
+      if (page._strippedContent) {
+        const _strippedContent = page._strippedContent
+        // filter out html annotations, spaces, newlines first
+        // and then calculate readingtime
+        page.readingTime = readingTime(_strippedContent.replace(/(<!--.*?-->)|[\r\n]| +/g, ''))
       }
     }
   }

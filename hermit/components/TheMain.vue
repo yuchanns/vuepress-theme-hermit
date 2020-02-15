@@ -1,6 +1,7 @@
 <template>
   <TransitionAnimate>
     <component
+      :toc="toc"
       :is="layout"
       :key="$page.path">
     </component>
@@ -13,6 +14,13 @@ import Vue from 'vue'
 
 export default {
   name: 'TheMain',
+
+  props: {
+    toc: {
+      type: Boolean,
+      default: false
+    }
+  },
 
   components: {
     TransitionAnimate

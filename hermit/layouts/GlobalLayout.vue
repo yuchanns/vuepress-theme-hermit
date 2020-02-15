@@ -1,7 +1,7 @@
 <template>
   <div id="vuepress-theme-hermit">
-    <TheHeader />
-    <TheMain />
+    <TheHeader @switchToc="switchToc" />
+    <TheMain :toc="toc" />
     <TheFooter />
   </div>
 </template>
@@ -18,6 +18,18 @@ export default {
     TheHeader,
     TheMain,
     TheFooter
+  },
+
+  data () {
+    return {
+      toc: false
+    }
+  },
+
+  methods: {
+    switchToc () {
+      this.toc = !this.toc
+    }
   }
 }
 </script>
