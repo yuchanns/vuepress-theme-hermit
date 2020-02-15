@@ -4,16 +4,22 @@ module.exports = (opts, ctx) => {
     nav: [],
     pagination: {
       lengthPerPage: 10
-    }
+    },
+    comment: {},
+    feed: {}
   }, opts))
 
-  const { pagination, lang, nav } = opts
+  const { pagination, lang, feed, comment } = opts
 
   const plugins = [
     [require('./plugins/blog'), {
       dirname: '_posts',
       pagination: pagination,
-      lang: lang
+      lang: lang,
+      service: {
+        comment,
+        feed,
+      }
     }]
   ]
 

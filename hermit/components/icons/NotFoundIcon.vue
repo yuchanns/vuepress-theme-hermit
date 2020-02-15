@@ -31,26 +31,3 @@ export default {
   name: 'NotFoundIcon'
 }
 </script>
-
-<style lang="stylus" scoped>
-svg
-  width 180px
-  max-width 100%
-  height auto
-
-.animated
-  animation-fill-mode both
-  &.slower
-    animation-duration 3s
-  &.infinite
-    animation-iteration-count infinite
-
-.flash
-  animation-name flash
-
-@keyframes flash
-  0%, 50%, 100%
-    opacity 1
-  25%, 75%
-    opacity 0
-</style>

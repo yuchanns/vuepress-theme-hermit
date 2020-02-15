@@ -3,7 +3,8 @@ const path = require('path')
 module.exports = ({
   dirname = '_posts',
   pagination = {},
-  lang = 'en-US'
+  lang = 'en-US',
+  service = {}
 }) => {
   return {
     name: '@theme-hermit/vuepress-plugin-blog',
@@ -21,9 +22,7 @@ module.exports = ({
             itemLayout: 'PostItem'
           }
         ],
-        feed: {
-          canonical_base: 'vuepress-theme-hermit.yuchanns.org'
-        }
+        ...service
       }],
       'vuepress-plugin-smooth-scroll'
     ],

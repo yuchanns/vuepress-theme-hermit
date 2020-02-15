@@ -53,5 +53,9 @@ module.exports = {
     pagination: {
       lengthPerPage: 10
     },
+
+    feed: {
+      canonical_base: 'vuepress-theme-hermit.yuchanns.org'
+    }
   }
 }
