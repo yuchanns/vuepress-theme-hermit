@@ -49,13 +49,12 @@ workflows:
   version: 2
   checks:
     jobs:
-      - build:
-          filters:
-            tags:
-              only: /^v.*/
+      - build
       - release:
           filters:
             tags:
               only: /^v.*/
+            branches:
+              ignore: /.*/
           requires:
             - build
