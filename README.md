@@ -8,6 +8,7 @@ I really like this theme at a glance, but I think a Hugo blog is not my style th
 
 ## STATUS
 [![CircleCI](https://circleci.com/gh/yuchanns/vuepress-theme-hermit/tree/master.svg?style=svg)](https://circleci.com/gh/yuchanns/vuepress-theme-hermit/tree/master)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4b4a6fec-ba27-4c6a-b7e4-5fedda967db4/deploy-status)](https://app.netlify.com/sites/vuepress-theme-hermit/deploys)
 
 Under rapid development. Do not take any chance on produce environment.
 
