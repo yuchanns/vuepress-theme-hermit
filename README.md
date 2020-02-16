@@ -7,6 +7,8 @@
 I really like this theme at a glance, but I think a Hugo blog is not my style though fastest it does, so I made it an implementation in Vuepress.
 
 ## STATUS
+[![CircleCI](https://circleci.com/gh/yuchanns/vuepress-theme-hermit/tree/master.svg?style=svg)](https://circleci.com/gh/yuchanns/vuepress-theme-hermit/tree/master)
+
 Under rapid development. Do not take any chance on produce environment.
 
 ~~Now it has stable version. Enjoy having it!~~
