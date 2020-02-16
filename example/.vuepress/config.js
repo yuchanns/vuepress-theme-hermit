@@ -1,9 +1,9 @@
 const path = require('path')
 
 module.exports = {
-  title: 'vuepress-theme-hermit',
+  title: 'Vuepress Hermit',
 
-  description: 'An implementation of Hugo theme hermit in vuepress',
+  description: 'An implementation of Hugo theme hermit in Vuepress',
 
   theme: path.resolve(__dirname, '../../hermit'),  // use the string 'hermit' in your situation.
 
@@ -52,6 +52,16 @@ module.exports = {
 
     pagination: {
       lengthPerPage: 10
+    },
+
+    comment: {
+      // service: 'disqus',
+      // shortname: 'vuepress-theme-hermit',
+      service: 'vssue',
+      owner: 'yuchanns',
+      repo: 'vuepress-theme-hermit',
+      clientId: 'ceb1a63d09aa8d7c2aeb',
+      clientSecret: 'b2af8f00b1f46bad31d2245ca34a33e75c36d52f'
     },
 
     feed: {

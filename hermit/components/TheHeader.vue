@@ -68,7 +68,6 @@ import TransitionAnimate from '@theme/components/TransitionAnimate'
 import MobileMenu from '@theme/components/MobileMenu'
 import Background from '@theme/components/Background'
 import _ from 'lodash'
-import 'animate.css'
 
 export default {
   name: 'TheHeader',

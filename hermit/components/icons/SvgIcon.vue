@@ -166,6 +166,14 @@ export default {
         { name: 'rect', attrs: { x: 3, y: 3, width: 18, height: 18, rx: 2, ry: 2 } },
         { name: 'circle', attrs: { cx: 8.5, cy: 8.5, r: 1.5} },
         { name: 'polyline', attrs: { points: '21 15 16 10 5 21' } }
+      ],
+      'arrow-left': [
+        { name: 'line', attrs: { x1: 19, y1: 12, x2: 5, y2: 12 } },
+        { name: 'polyline', attrs: { points: '12 19 5 12 12 5' } }
+      ],
+      'arrow-right': [
+        { name: 'line', attrs: { x1: 5, y1: 12, x2: 19, y2: 12 } },
+        { name: 'polyline', attrs: { points: '12 5 19 12 12 19' } }
       ]
     }
   },

@@ -10,6 +10,7 @@
 import TheHeader from '@theme/components/TheHeader'
 import TheMain from '@theme/components/TheMain'
 import TheFooter from '@theme/components/TheFooter'
+import 'animate.css'
 
 export default {
   name: 'vuepress-theme-hermit',

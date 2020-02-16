@@ -31,18 +31,47 @@
       leave-active-class="animated fast bounceOutRight">
       <Toc v-if="toc" />
     </transition>
+    <div class="post-nav thin">
+      <router-link
+        v-if="nextPost"
+        :to="nextPost.path"
+        class="next-post">
+        <span class="post-nav-label">
+          <SvgIcon type="arrow-left" />
+          Newer
+        </span>
+        <br>
+        <span>{{ nextPost.title }}</span>
+      </router-link>
+      <router-link
+        v-if="prevPost"
+        :to="prevPost.path"
+        class="prev-post">
+        <span class="post-nav-label">
+          Older
+          <SvgIcon type="arrow-right" />
+        </span>
+        <br>
+        <span>{{ prevPost.title }}</span>
+      </router-link>
+    </div>
+    <div class="thin comments" v-if="$service.comment.enabled">
+      <Comment />
+    </div>
   </main>
 </template>
 
 <script>
-// TODO: related-posts and comments
+import { Comment } from '@vuepress/plugin-blog/lib/client/components'
 import Toc from '@theme/components/Toc'
+import _ from 'lodash'
 
 export default {
   name: 'PostItem',
 
   components: {
-    Toc
+    Toc,
+    Comment
   },
 
   props: {
@@ -50,6 +79,28 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+
+  computed: {
+    index () {
+      return _.findIndex(this.$posts.posts, post => {
+        return post.key === this.$page.key
+      })
+    },
+
+    prevPost () {
+      if (this.index === this.$posts.posts.length) {
+        return null
+      }
+      return this.$posts.posts[this.index + 1]
+    },
+
+    nextPost () {
+      if (this.index === 0) {
+        return null
+      }
+      return this.$posts.posts[this.index - 1]
+    },
   }
 }
 </script>
@@ -93,4 +144,24 @@ export default {
       margin-right .5em
       &:before
         content '#'
+  &-nav
+    display flex
+    justify-content space-between
+    margin-top 1.5em
+    margin-bottom 2.5em
+    font-size 1.2em
+    a
+      flex-basis 50%
+      flex-grow 1
+    &-label
+      font-size .8em
+      opacity .8
+      text-transform uppercase
+.next-post
+  text-align left
+  padding-right 5px
+
+.prev-post
+  text-align right
+  padding-left 5px
 </style>

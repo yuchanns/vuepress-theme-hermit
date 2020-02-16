@@ -57,15 +57,19 @@ export default ({ Vue }) => {
     computed: {
       $posts () {
         const pages = this.$site.pages
-        const current = this.$pagination.paginationIndex * this.$themeConfig.pagination.lengthPerPage
+        let current = 0, lengthPerPage = pages.length
+        if (this.$pagination) {
+          current = this.$pagination.paginationIndex * this.$themeConfig.pagination.lengthPerPage
+          lengthPerPage = this.$themeConfig.pagination.lengthPerPage
+        }
         let yearsPosts = {}
-        pages.filter(page => {
+        const sortedPosts = pages.filter(page => {
           return page.id === 'Posts'
         })
-          .sort((a, b) => {
+        sortedPosts.sort((a, b) => {
             return compareDesc(a.frontmatter.date, b.frontmatter.date)
           })
-          .slice(current, current + this.$themeConfig.pagination.lengthPerPage)
+          .slice(current, current + lengthPerPage)
           .map(page => {
             const year = getYear(page.frontmatter.date)
             if (!(year in yearsPosts)) {
@@ -78,7 +82,7 @@ export default ({ Vue }) => {
           return b - a
         })
 
-        return { years: years, yearsPosts: yearsPosts }
+        return { years: years, yearsPosts: yearsPosts, posts: sortedPosts }
       }
     }
   })

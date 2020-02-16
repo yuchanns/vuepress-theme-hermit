@@ -1,5 +1,5 @@
 # vuepress-theme-hermit
-**An implementation of Hugo theme hermit in vuepress**
+**An implementation of Hugo theme hermit in Vuepress**
 
 > *Star it plz if you like !*
 
