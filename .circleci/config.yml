@@ -54,3 +54,5 @@ workflows:
           filters:
             tags:
               only: /^v.*/
+          requires:
+            - build
