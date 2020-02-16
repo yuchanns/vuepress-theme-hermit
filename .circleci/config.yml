@@ -37,19 +37,17 @@ jobs:
       - run:
           name: Lint Code
           command: yarn lint
-  rels:
+  release:
     executor: node
-    requires:
-      - build
     steps:
       - install
       - run:
-          name: Write Version
-          command: sh -c "scripts/release/release.sh"
+          name: Build Docs
+          command: yarn build
 
 workflows:
   version: 2
   checks:
     jobs:
       - build
-      - rels
+      - release
