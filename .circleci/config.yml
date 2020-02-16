@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Lint Code
           command: yarn lint
-  release:
+  rels:
     executor: node
     requires:
       - build
@@ -52,4 +52,4 @@ workflows:
   checks:
     jobs:
       - build
-      - release
+      - rels
