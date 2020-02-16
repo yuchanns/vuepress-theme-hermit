@@ -42,8 +42,8 @@ jobs:
     steps:
       - install
       - run:
-          name: Build Docs
-          command: yarn build
+          name: Release Version
+          command: sh -c "scripts/release/release.sh"
 
 workflows:
   version: 2
