@@ -39,6 +39,9 @@ jobs:
           command: yarn lint
   release:
     executor: node
+    filters:
+      tags:
+        only: /^v.*/
     steps:
       - install
       - run:
