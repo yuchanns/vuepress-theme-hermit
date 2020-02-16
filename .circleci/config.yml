@@ -1,0 +1,55 @@
+version: 2.1
+
+excutors:
+  node:
+    docker:
+      - image: circleci/node:10
+
+commands:
+  install:
+    steps:
+      - checkout
+      - restore_cache:
+        name: Restore Yarn Package Cache
+        keys:
+          - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save node_modules Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+  release:
+    steps:
+      - checkout
+      - run:
+          name: Write Version
+          command: sh -c "scripts/release/release.sh"
+
+jobs:
+  build:
+    executor: node
+    steps:
+      - install
+      - run:
+          name: Build Docs
+          command: yarn build
+  release:
+    executor: node
+    filters:
+      tags:
+        only: /^v.*/
+    build:
+      steps:
+        - release
+
+workflows:
+  version: 2
+  checks:
+    jobs:
+      - build
+      - release:
+          requires:
+            - build
