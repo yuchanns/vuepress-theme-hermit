@@ -10,7 +10,8 @@
           rel="nofollow me noopener noreferrer"
           target="_blank"
           v-for="(sns, k) in $themeConfig.sns">
-          <SvgIcon :type="sns.type" />
+          <component v-if="sns.svg" :is="sns.svg" />
+          <SvgIcon v-else :type="sns.type" />
         </a>
       </div>
       <nav class="home-nav site-nav">

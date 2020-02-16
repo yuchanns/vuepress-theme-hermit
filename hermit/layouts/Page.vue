@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <Content/>
-  </div>
+  <main class="site-main section-inner thin">
+    <h1>{{ $page.title }}</h1>
+    <Content class="content" />
+  </main>
 </template>
 
 <script>

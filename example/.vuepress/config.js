@@ -27,6 +27,7 @@ module.exports = {
     ],
 
     sns: [
+      { type: 'qq', url: 'https://qq.com', svg: 'svg-qq' },
       { type: 'codepen', url: 'https://codepen.io/' },
       { type: 'facebook', url: 'https://www.facebook.com' },
       { type: 'github', url: 'https://github.com/yuchanns' },

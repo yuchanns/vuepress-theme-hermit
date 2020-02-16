@@ -40,7 +40,8 @@
                 rel="nofollow me noopener noreferrer"
                 target="_blank"
                 v-for="(sns, k) in $themeConfig.sns">
-                <SvgIcon :type="sns.type" />
+                <component v-if="sns.svg" :is="sns.svg" />
+                <SvgIcon v-else :type="sns.type" />
               </a>
             </span>
             <button class="menu-btn hdr-btn" title="Menu" @click="show = !show">
