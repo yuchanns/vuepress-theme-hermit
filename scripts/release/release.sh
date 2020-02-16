@@ -22,4 +22,3 @@ then
 else
   npm publish
 fi
-cd - || exit
