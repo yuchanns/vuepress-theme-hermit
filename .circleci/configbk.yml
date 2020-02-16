@@ -1,6 +1,6 @@
 version: 2.1
 
-executors:
+excutors:
   node:
     docker:
       - image: circleci/node:10
@@ -21,6 +21,12 @@ commands:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+  release:
+    steps:
+      - checkout
+      - run:
+          name: Write Version
+          command: sh -c "scripts/release/release.sh"
 
 jobs:
   build:
@@ -30,17 +36,20 @@ jobs:
       - run:
           name: Build Docs
           command: yarn build
-  lint:
+  release:
     executor: node
-    steps:
-      - install
-      - run:
-          name: Lint Code
-          command: yarn lint
+    requires:
+      - build
+    filters:
+      tags:
+        only: /^v.*/
+    build:
+      steps:
+        - release
 
 workflows:
   version: 2
   checks:
     jobs:
-      - lint
       - build
+      - release
