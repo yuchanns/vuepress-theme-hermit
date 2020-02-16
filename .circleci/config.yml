@@ -10,9 +10,9 @@ commands:
     steps:
       - checkout
       - restore_cache:
-        name: Restore Yarn Package Cache
-        keys:
-          - yarn-packages-{{ checksum "yarn.lock" }}
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
@@ -38,6 +38,8 @@ jobs:
           command: yarn build
   release:
     executor: node
+    requires:
+      - build
     filters:
       tags:
         only: /^v.*/
@@ -50,6 +52,4 @@ workflows:
   checks:
     jobs:
       - build
-      - release:
-          requires:
-            - build
+      - release
