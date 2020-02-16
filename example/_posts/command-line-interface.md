@@ -2,10 +2,7 @@
 title: Command-line Interface
 date: 2019-11-11 15:15:00
 tags:
-  - markdown
-  - css
-  - html
-  - themes
+  - vuepress
 ---
 ## Usage
 

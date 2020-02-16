@@ -2,10 +2,10 @@
   <div class="btn-pagination" v-if="$pagination.hasPrev || $pagination.hasNext">
     <router-link v-if="$pagination.hasPrev" :to="$pagination.prevLink">
       <SvgIcon type="chevron-left" :svg='{ viewBox: "0 0 8 16" }' />
-      Newer
+      {{ $themeConfig.lang.next }}
     </router-link>
     <router-link v-if="$pagination.hasNext" :to="$pagination.nextLink">
-      Older
+      {{ $themeConfig.lang.prev }}
       <SvgIcon type="chevron-right" :svg='{ viewBox: "0 0 8 16" }' />
     </router-link>
   </div>

@@ -14,7 +14,7 @@ Under rapid development. Do not take any chance on produce environment.
 ## FETCH THEME
 Just run `yarn add vuepress-theme-hermit`.
 
-Seek [@document]() for help
+~~Seek [@document]() for help~~
 
 ## CONTRIBUTE
 First clone the repo:

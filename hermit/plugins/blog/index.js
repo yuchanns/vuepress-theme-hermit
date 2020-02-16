@@ -3,22 +3,29 @@ const { format } = require('date-fns')
 const markdownItAnchor = require('../markdown-it/anchor')
 const markdownItLink = require('../markdown-it/link')
 const markdownItLazyImage = require('../markdown-it/lazy-image')
-const readingTime = require('./reading-time')
+const readingTime = require('../../utils/reading-time')
 
 module.exports = ({
   dirname = '_posts',
   pagination = {},
-  lang = 'en-US',
+  lang = {},
   service = {}
 }) => {
   Object.assign(pagination, {
     layout: 'Post',
-    // getPaginationPageTitle: pageNumber => {
-    //   return `${lang.home}`
-    // },
+    getPaginationPageTitle: () => {
+      return `${lang.home}`
+    },
     sorter: (prev, next) => {
       const { compareAsc } = require('date-fns')
       return compareAsc(next.frontmatter.date, prev.frontmatter.date)
+    }
+  })
+
+  const tagPagination = Object.assign(Object.assign({}, pagination), {
+    layout: 'Tag',
+    getPaginationPageTitle: (pageNumber, name) => {
+      return `${name} ${lang.tags}`
     }
   })
 
@@ -35,7 +42,19 @@ module.exports = ({
             itemPermalink: '/posts/:year/:month/:day/:slug',
             pagination: pagination,
             layout: 'Post',
-            itemLayout: 'PostItem'
+            itemLayout: 'PostItem',
+            title: lang.posts
+          }
+        ],
+        frontmatters: [
+          {
+            id: 'tags',
+            keys: ['tags'],
+            path: '/tags/',
+            layout: 'Tag',
+            scopeLayout: 'Tag',
+            pagination: tagPagination,
+            title: lang.tags
           }
         ],
         ...service

@@ -4,6 +4,7 @@ import { VLazyImagePlugin } from 'v-lazy-image'
 import VueLazyload from 'vue-lazyload'
 import SvgIcon from '@theme/components/icons/SvgIcon'
 import LazyVideo from '@theme/components/LazyVideo'
+import { postsPrepare } from '@theme/utils/posts-prepare'
 
 export default ({ Vue }) => {
   // use lazyimage
@@ -62,27 +63,7 @@ export default ({ Vue }) => {
           current = this.$pagination.paginationIndex * this.$themeConfig.pagination.lengthPerPage
           lengthPerPage = this.$themeConfig.pagination.lengthPerPage
         }
-        let yearsPosts = {}
-        const sortedPosts = pages.filter(page => {
-          return page.id === 'Posts'
-        })
-        sortedPosts.sort((a, b) => {
-            return compareDesc(a.frontmatter.date, b.frontmatter.date)
-          })
-          .slice(current, current + lengthPerPage)
-          .map(page => {
-            const year = getYear(page.frontmatter.date)
-            if (!(year in yearsPosts)) {
-              yearsPosts[year] = []
-            }
-            page.frontmatter.formatDate = format(page.frontmatter.date, 'MMM D')
-            yearsPosts[year].push(page)
-          })
-        const years = Object.keys(yearsPosts).sort((a, b) => {
-          return b - a
-        })
-
-        return { years: years, yearsPosts: yearsPosts, posts: sortedPosts }
+        return postsPrepare(pages, current, lengthPerPage)
       }
     }
   })

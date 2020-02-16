@@ -38,7 +38,7 @@
         class="next-post">
         <span class="post-nav-label">
           <SvgIcon type="arrow-left" />
-          Newer
+          {{ $themeConfig.lang.next }}
         </span>
         <br>
         <span>{{ nextPost.title }}</span>
@@ -48,7 +48,7 @@
         :to="prevPost.path"
         class="prev-post">
         <span class="post-nav-label">
-          Older
+          {{ $themeConfig.lang.prev }}
           <SvgIcon type="arrow-right" />
         </span>
         <br>

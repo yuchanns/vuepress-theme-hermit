@@ -9,13 +9,22 @@ module.exports = (opts, ctx) => {
     feed: {}
   }, opts))
 
-  const { pagination, lang, feed, comment } = opts
+  const { pagination, feed, comment } = opts
+
+  if (typeof opts.lang === 'string') {
+    try {
+      require.resolve(`./langs/${opts.lang}`)
+    } catch (e) {
+      opts.lang = 'en-US'
+    }
+    opts.lang = require(`./langs/${opts.lang}`)
+  }
 
   const plugins = [
     [require('./plugins/blog'), {
       dirname: '_posts',
       pagination: pagination,
-      lang: lang,
+      lang: opts.lang,
       service: {
         comment,
         feed,
@@ -32,7 +41,8 @@ module.exports = (opts, ctx) => {
       ctx.addPage({
         permalink: '/',
         frontmatter: {
-          layout: 'Home'
+          layout: 'Home',
+          title: `${opts.lang.home}`
         }
       })
     }

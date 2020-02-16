@@ -7,8 +7,8 @@
       <h1>404</h1>
       <p>{{ hint }}</p>
       <p class="btn-404">
-        <router-link to="/"><SvgIcon type="home" />Home</router-link>
-        <router-link to="/posts/"><SvgIcon type="archives" />Archives</router-link>
+        <router-link to="/"><SvgIcon type="home" />{{ $themeConfig.lang.home }}</router-link>
+        <router-link to="/posts/"><SvgIcon type="archives" />{{ $themeConfig.lang.archives }}</router-link>
       </p>
     </div>
   </div>

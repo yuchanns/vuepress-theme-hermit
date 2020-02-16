@@ -2,10 +2,7 @@
 title: Config Reference
 date: 2019-10-11 15:15:00
 tags:
-  - markdown
-  - css
-  - html
-  - themes
+  - vuepress
 ---
 ## Basic Config
 
