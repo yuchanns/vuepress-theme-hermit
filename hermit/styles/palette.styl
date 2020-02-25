@@ -10,3 +10,101 @@ $dashedColor = #7d828a
 $vssue-theme-color = $hoverColor
 $vssue-text-color = $keyColor
 $vssue-border-color = $keyColor
+//colors
+$color_mine_shaft_approx = #333333
+$color_guardsman_red_approx = #cc0000
+$black = black
+$color_gallery_approx = #eeeeee
+$color_tapa_approx = #777777
+$color_mercury_approx = #e7e7e7
+$color_alto_approx = #dddddd
+$white = white
+$color_celeste_approx = #cccccc
+$color_desert_storm_approx = #f8f8f8
+$black_4 = rgba(0, 0, 0, 0.04)
+$color_black_haze_approx = #f7f7f7
+$color_mountain_mist_approx = #969896
+$color_bondi_blue_approx = #0086b3
+$color_deluge_approx = #795da3
+$color_fruit_salad_approx = #63a35c
+$color_jazzberry_jam_approx = #a71d5d
+$color_trinidad_approx = #df5000
+$color_thunderbird_approx = #b52a1d
+$color_sepia_approx = #693a17
+$color_bay_of_many_approx = #1d3e81
+$teal = teal
+$color_fair_pink_approx = #ffecec
+$color_hint_of_green_approx = #eaffea
+$color_apple_approx = #55a532
+$color_storm_dust_approx = #666666
+$color_silver_chalice_approx = #aaaaaa
+//fonts
+$font_0 = Helvetica Neue
+$font_1 = Helvetica
+$font_2 = Segoe UI
+$font_3 = Arial
+$font_4 = freesans
+$font_5 = sans-serif
+$font_6 = Consolas
+$font_7 = Liberation Mono
+$font_8 = Menlo
+$font_9 = Courier
+$font_10 = monospace
+$font_11 = monospace !important
+$font_12 = arial
+$font_13 = clean
+//@extend-elements
+//original selectors
+//.gist .markdown-body h1, .gist .markdown-body h2, .gist .markdown-body h3, .gist .markdown-body h4, .gist .markdown-body h5, .gist .markdown-body h6
+$extend_1
+  position: relative
+  margin-top: 1em
+  margin-bottom: 16px
+  font-weight: bold
+  line-height: 1.4
+//original selectors
+//.gist .markdown-body h1 .octicon-link, .gist .markdown-body h2 .octicon-link, .gist .markdown-body h3 .octicon-link, .gist .markdown-body h4 .octicon-link, .gist .markdown-body h5 .octicon-link, .gist .markdown-body h6 .octicon-link
+$extend_2
+  display: none
+  color: $black
+  vertical-align: middle
+//original selectors
+//.gist .markdown-body h1:hover .anchor, .gist .markdown-body h2:hover .anchor, .gist .markdown-body h3:hover .anchor, .gist .markdown-body h4:hover .anchor, .gist .markdown-body h5:hover .anchor, .gist .markdown-body h6:hover .anchor
+$extend_3
+  padding-left: 8px
+  margin-left: -30px
+  line-height: 1
+  text-decoration: none
+//original selectors
+//.gist .markdown-body code, .gist .markdown-body tt
+$extend_4
+  padding: 0
+  padding-top: 0.2em
+  padding-bottom: 0.2em
+  margin: 0
+  font-size: 85%
+  background-color: $black_4
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 3px
+//original selectors
+//.gist .markdown-body .highlight pre, .gist .markdown-body pre
+$extend_5
+  padding: 16px
+  overflow: auto
+  font-size: 85%
+  line-height: 1.45
+  background-color: $color_black_haze_approx
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 3px
+//original selectors
+//.gist .markdown-body pre code, .gist .markdown-body pre tt
+$extend_6
+  display: inline
+  max-width: initial
+  padding: 0
+  margin: 0
+  overflow: initial
+  line-height: inherit
+  word-wrap: normal
+  background-color: transparent
+  border: 0

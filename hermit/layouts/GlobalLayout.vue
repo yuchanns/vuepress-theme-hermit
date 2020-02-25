@@ -11,6 +11,7 @@ import TheHeader from '@theme/components/TheHeader'
 import TheMain from '@theme/components/TheMain'
 import TheFooter from '@theme/components/TheFooter'
 import 'animate.css'
+import 'github-syntax-light/lib/github-light.css'
 
 export default {
   name: 'vuepress-theme-hermit',

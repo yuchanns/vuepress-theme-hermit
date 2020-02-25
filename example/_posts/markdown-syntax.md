@@ -115,6 +115,12 @@ var foo = function (bar) {
 console.log(foo(5));
 ```
 
+## Embed Gist
+
+<gist id="988908c955180b2b17221d61f8ef7ed1" name="embedGist.vue" />
+
+Use the built-in component `<gist id="the-gist-id" name="file-name-in-the-gist" />` to place video.
+
 ## Tables
 
 | Option | Description |

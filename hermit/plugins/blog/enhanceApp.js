@@ -1,7 +1,6 @@
-import getYear from 'date-fns/get_year'
-import { format, compareDesc } from 'date-fns'
 import { VLazyImagePlugin } from 'v-lazy-image'
 import VueLazyload from 'vue-lazyload'
+import Gist from '@theme/components/Gist'
 import SvgIcon from '@theme/components/icons/SvgIcon'
 import LazyVideo from '@theme/components/LazyVideo'
 import { postsPrepare } from '@theme/utils/posts-prepare'
@@ -47,6 +46,31 @@ export default ({ Vue }) => {
     render (h, { props, parent }) {
       if (parent._isMounted) {
         return h(SvgIcon, { props: props })
+      } else {
+        parent.$once('hook:mounted', () => {
+          parent.$forceUpdate()
+        })
+      }
+    }
+  })
+  // create gist
+  Vue.component('Gist', {
+    functional: true,
+
+    props: {
+      id: {
+        type: String,
+        default: ''
+      },
+      name: {
+        type: String,
+        default: ''
+      }
+    },
+
+    render(h, { props, parent }) {
+      if (parent._isMounted) {
+        return h(Gist, { props: props })
       } else {
         parent.$once('hook:mounted', () => {
           parent.$forceUpdate()

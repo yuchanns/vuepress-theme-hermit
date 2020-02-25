@@ -1,0 +1,608 @@
+//colors
+$color_mine_shaft_approx = #333333
+$color_guardsman_red_approx = #cc0000
+$black = black
+$color_gallery_approx = #eeeeee
+$color_tapa_approx = #777777
+$color_mercury_approx = #e7e7e7
+$color_alto_approx = #dddddd
+$white = white
+$color_celeste_approx = #cccccc
+$color_desert_storm_approx = #f8f8f8
+$black_4 = rgba(0, 0, 0, 0.04)
+$color_black_haze_approx = #f7f7f7
+$color_mountain_mist_approx = #969896
+$color_bondi_blue_approx = #0086b3
+$color_deluge_approx = #795da3
+$color_fruit_salad_approx = #63a35c
+$color_jazzberry_jam_approx = #a71d5d
+$color_trinidad_approx = #df5000
+$color_thunderbird_approx = #b52a1d
+$color_sepia_approx = #693a17
+$color_bay_of_many_approx = #1d3e81
+$teal = teal
+$color_fair_pink_approx = #ffecec
+$color_hint_of_green_approx = #eaffea
+$color_apple_approx = #55a532
+$color_storm_dust_approx = #666666
+$color_silver_chalice_approx = #aaaaaa
+//fonts
+$font_0 = Helvetica Neue
+$font_1 = Helvetica
+$font_2 = Segoe UI
+$font_3 = Arial
+$font_4 = freesans
+$font_5 = sans-serif
+$font_6 = Consolas
+$font_7 = Liberation Mono
+$font_8 = Menlo
+$font_9 = Courier
+$font_10 = monospace
+$font_11 = monospace !important
+$font_12 = arial
+$font_13 = clean
+//@extend-elements
+//original selectors
+//.gist .markdown-body h1, .gist .markdown-body h2, .gist .markdown-body h3, .gist .markdown-body h4, .gist .markdown-body h5, .gist .markdown-body h6
+$extend_1
+  position: relative
+  margin-top: 1em
+  margin-bottom: 16px
+  font-weight: bold
+  line-height: 1.4
+//original selectors
+//.gist .markdown-body h1 .octicon-link, .gist .markdown-body h2 .octicon-link, .gist .markdown-body h3 .octicon-link, .gist .markdown-body h4 .octicon-link, .gist .markdown-body h5 .octicon-link, .gist .markdown-body h6 .octicon-link
+$extend_2
+  display: none
+  color: $black
+  vertical-align: middle
+//original selectors
+//.gist .markdown-body h1:hover .anchor, .gist .markdown-body h2:hover .anchor, .gist .markdown-body h3:hover .anchor, .gist .markdown-body h4:hover .anchor, .gist .markdown-body h5:hover .anchor, .gist .markdown-body h6:hover .anchor
+$extend_3
+  padding-left: 8px
+  margin-left: -30px
+  line-height: 1
+  text-decoration: none
+//original selectors
+//.gist .markdown-body code, .gist .markdown-body tt
+$extend_4
+  padding: 0
+  padding-top: 0.2em
+  padding-bottom: 0.2em
+  margin: 0
+  font-size: 85%
+  background-color: $black_4
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 3px
+//original selectors
+//.gist .markdown-body .highlight pre, .gist .markdown-body pre
+$extend_5
+  padding: 16px
+  overflow: auto
+  font-size: 85%
+  line-height: 1.45
+  background-color: $color_black_haze_approx
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 3px
+//original selectors
+//.gist .markdown-body pre code, .gist .markdown-body pre tt
+$extend_6
+  display: inline
+  max-width: initial
+  padding: 0
+  margin: 0
+  overflow: initial
+  line-height: inherit
+  word-wrap: normal
+  background-color: transparent
+  border: 0
+.gist
+  color: $color_mine_shaft_approx
+  font-size: 16px
+  .markdown-body
+    overflow: hidden
+    font-family: $font_0, $font_1, $font_2, $font_3, $font_4, $font_5
+    font-size: 16px
+    line-height: 1.6
+    word-wrap: break-word
+    .absent
+      color: $color_guardsman_red_approx
+    .anchor
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      display: block
+      padding-right: 6px
+      padding-left: 30px
+      margin-left: -30px
+      &:focus
+        outline: none
+    h1
+      @extend $extend_1
+      padding-bottom: 0.3em
+      font-size: 2.25em
+      line-height: 1.2
+      border-bottom: 1px solid $color_gallery_approx
+      .octicon-link
+        @extend $extend_2
+      tt
+        font-size: inherit
+      code
+        font-size: inherit
+      &:hover .anchor
+        @extend $extend_3
+        .octicon-link
+          display: inline-block
+    h2
+      @extend $extend_1
+      padding-bottom: 0.3em
+      font-size: 1.75em
+      line-height: 1.225
+      border-bottom: 1px solid $color_gallery_approx
+      .octicon-link
+        @extend $extend_2
+      tt
+        font-size: inherit
+      code
+        font-size: inherit
+      &:hover .anchor
+        @extend $extend_3
+        .octicon-link
+          display: inline-block
+    h3
+      @extend $extend_1
+      font-size: 1.5em
+      line-height: 1.43
+      .octicon-link
+        @extend $extend_2
+      tt
+        font-size: inherit
+      code
+        font-size: inherit
+      &:hover .anchor
+        @extend $extend_3
+        .octicon-link
+          display: inline-block
+    h4
+      @extend $extend_1
+      font-size: 1.25em
+      .octicon-link
+        @extend $extend_2
+      tt
+        font-size: inherit
+      code
+        font-size: inherit
+      &:hover .anchor
+        @extend $extend_3
+        .octicon-link
+          display: inline-block
+    h5
+      @extend $extend_1
+      font-size: 1em
+      .octicon-link
+        @extend $extend_2
+      tt
+        font-size: inherit
+      code
+        font-size: inherit
+      &:hover .anchor
+        @extend $extend_3
+        .octicon-link
+          display: inline-block
+    h6
+      @extend $extend_1
+      font-size: 1em
+      color: $color_tapa_approx
+      .octicon-link
+        @extend $extend_2
+      tt
+        font-size: inherit
+      code
+        font-size: inherit
+      &:hover .anchor
+        @extend $extend_3
+        .octicon-link
+          display: inline-block
+    p
+      margin-top: 0
+      margin-bottom: 16px
+    blockquote
+      margin-top: 0
+      margin-bottom: 16px
+      padding: 0 15px
+      color: $color_tapa_approx
+      border-left: 4px solid $color_alto_approx
+    ul
+      margin-top: 0
+      margin-bottom: 16px
+      padding-left: 2em
+      &.no-list
+        padding: 0
+        list-style-type: none
+      ul
+        margin-top: 0
+        margin-bottom: 0
+      ol
+        margin-top: 0
+        margin-bottom: 0
+    ol
+      margin-top: 0
+      margin-bottom: 16px
+      padding-left: 2em
+      &.no-list
+        padding: 0
+        list-style-type: none
+      ol
+        margin-top: 0
+        margin-bottom: 0
+      ul
+        margin-top: 0
+        margin-bottom: 0
+    dl
+      margin-top: 0
+      margin-bottom: 16px
+      padding: 0
+      dt
+        padding: 0
+        margin-top: 16px
+        font-size: 1em
+        font-style: italic
+        font-weight: bold
+      dd
+        padding: 0 16px
+        margin-bottom: 16px
+    table
+      margin-top: 0
+      margin-bottom: 16px
+      display: block
+      width: 100%
+      overflow: auto
+      //Instead of the line below you could use @includeword-break($value)
+      word-break: normal
+      //Instead of the line below you could use @includeword-break($value)
+      word-break: keep-all
+      th
+        font-weight: bold
+        padding: 6px 13px
+        border: 1px solid $color_alto_approx
+      td
+        padding: 6px 13px
+        border: 1px solid $color_alto_approx
+      tr
+        background-color: $white
+        border-top: 1px solid $color_celeste_approx
+        &:nth-child(2n)
+          background-color: $color_desert_storm_approx
+    pre
+      margin-top: 0
+      margin-bottom: 16px
+      @extend $extend_5
+      word-wrap: normal
+      code
+        @extend $extend_6
+        &:before
+          content: normal
+        &:after
+          content: normal
+      tt
+        @extend $extend_6
+        &:before
+          content: normal
+        &:after
+          content: normal
+    hr
+      height: 4px
+      padding: 0
+      margin: 16px 0
+      background-color: $color_mercury_approx
+      border: 0 none
+    li>p
+      margin-top: 16px
+    blockquote>
+      &:first-child
+        margin-top: 0
+      &:last-child
+        margin-bottom: 0
+    img
+      max-width: 100%
+      //Instead of the line below you could use @includebox-sizing($bs)
+      box-sizing: border-box
+    span
+      &.frame
+        display: block
+        overflow: hidden
+        span
+          img
+            display: block
+            float: left
+          span
+            display: block
+            padding: 5px 0 0
+            clear: both
+            color: $color_mine_shaft_approx
+      &.frame > span
+        display: block
+        float: left
+        width: auto
+        padding: 7px
+        margin: 13px 0 0
+        overflow: hidden
+        border: 1px solid $color_alto_approx
+      &.align-center
+        display: block
+        overflow: hidden
+        clear: both
+        span img
+          margin: 0 auto
+          text-align: center
+      &.align-center > span
+        display: block
+        margin: 13px auto 0
+        overflow: hidden
+        text-align: center
+      &.align-right
+        display: block
+        overflow: hidden
+        clear: both
+        span img
+          margin: 0
+          text-align: right
+      &.align-right > span
+        display: block
+        margin: 13px 0 0
+        overflow: hidden
+        text-align: right
+      &.float-left
+        display: block
+        float: left
+        margin-right: 13px
+        overflow: hidden
+        span
+          margin: 13px 0 0
+      &.float-right
+        display: block
+        float: right
+        margin-left: 13px
+        overflow: hidden
+      &.float-right > span
+        display: block
+        margin: 13px auto 0
+        overflow: hidden
+        text-align: right
+    code
+      @extend $extend_4
+      &:before
+        letter-spacing: -0.2em
+        content: "\00a0"
+      &:after
+        letter-spacing: -0.2em
+        content: "\00a0"
+      br
+        display: none
+    tt
+      @extend $extend_4
+      &:before
+        letter-spacing: -0.2em
+        content: "\00a0"
+      &:after
+        letter-spacing: -0.2em
+        content: "\00a0"
+      br
+        display: none
+    pre>code
+      padding: 0
+      margin: 0
+      font-size: 100%
+      //Instead of the line below you could use @includeword-break($value)
+      word-break: normal
+      white-space: pre
+      background: transparent
+      border: 0
+    .highlight
+      margin-bottom: 16px
+      pre
+        @extend $extend_5
+        margin-bottom: 0
+        //Instead of the line below you could use @includeword-break($value)
+        word-break: normal
+    del code
+      text-decoration: inherit
+  .markdown-body>*
+    &:first-child
+      margin-top: 0 !important
+    &:last-child
+      margin-bottom: 0 !important
+  .highlight
+    font-family: $font_6, $font_7, $font_8, $font_9, $font_10
+    font-size: 12px
+    font-weight: normal
+    line-height: 1.4
+    margin: 0
+    padding: 0
+    background: $white
+    color: $color_mine_shaft_approx
+  .pl-c
+    color: $color_mountain_mist_approx
+  .pl-c1
+    color: $color_bondi_blue_approx
+  .pl-mdh
+    color: $color_bondi_blue_approx
+  .pl-mm
+    color: $color_bondi_blue_approx
+  .pl-mp
+    color: $color_bondi_blue_approx
+  .pl-mr
+    color: $color_bondi_blue_approx
+  .pl-s1
+    color: $color_trinidad_approx
+    .pl-v
+      color: $color_bondi_blue_approx
+    .pl-s2
+      color: $color_mine_shaft_approx
+    .pl-pse .pl-s2
+      color: $color_trinidad_approx
+  .pl-s3
+    color: $color_bondi_blue_approx
+  .pl-sc
+    color: $color_bondi_blue_approx
+  .pl-sv
+    color: $color_bondi_blue_approx
+  .pl-e
+    color: $color_deluge_approx
+  .pl-en
+    color: $color_deluge_approx
+  .pl-smi
+    color: $color_mine_shaft_approx
+  .pl-smp
+    color: $color_mine_shaft_approx
+  .pl-stj
+    color: $color_mine_shaft_approx
+  .pl-vo
+    color: $color_mine_shaft_approx
+  .pl-vpf
+    color: $color_mine_shaft_approx
+  .pl-ent
+    color: $color_fruit_salad_approx
+  .pl-k
+    color: $color_jazzberry_jam_approx
+  .pl-s
+    color: $color_jazzberry_jam_approx
+  .pl-st
+    color: $color_jazzberry_jam_approx
+  .pl-pds
+    color: $color_trinidad_approx
+  .pl-sr
+    color: $color_trinidad_approx
+    .pl-cce
+      color: $color_trinidad_approx
+      color: $color_fruit_salad_approx
+      font-weight: bold
+    .pl-sra
+      color: $color_trinidad_approx
+    .pl-sre
+      color: $color_trinidad_approx
+  .pl-src
+    color: $color_trinidad_approx
+  .pl-v
+    color: $color_trinidad_approx
+  .pl-id
+    color: $color_thunderbird_approx
+  .pl-ii
+    background-color: $color_thunderbird_approx
+    color: $color_desert_storm_approx
+  .pl-ml
+    color: $color_sepia_approx
+  .pl-mh
+    color: $color_bay_of_many_approx
+    font-weight: bold
+    .pl-en
+      color: $color_bay_of_many_approx
+      font-weight: bold
+  .pl-ms
+    color: $color_bay_of_many_approx
+    font-weight: bold
+  .pl-mq
+    color: $teal
+  .pl-mi
+    color: $color_mine_shaft_approx
+    font-style: italic
+  .pl-mb
+    color: $color_mine_shaft_approx
+    font-weight: bold
+  .pl-md
+    background-color: $color_fair_pink_approx
+    color: $color_thunderbird_approx
+  .pl-mdhf
+    background-color: $color_fair_pink_approx
+    color: $color_thunderbird_approx
+  .pl-mdht
+    background-color: $color_hint_of_green_approx
+    color: $color_apple_approx
+  .pl-mi1
+    background-color: $color_hint_of_green_approx
+    color: $color_apple_approx
+  .pl-mdr
+    color: $color_deluge_approx
+    font-weight: bold
+  .pl-mo
+    color: $color_bay_of_many_approx
+  .render-viewer-error
+    display: none
+  .render-viewer-fatal
+    display: none
+  .octospinner
+    display: none
+  pre
+    font-family: $font_6, $font_7, $font_8, $font_9, $font_11
+    white-space: pre
+  code
+    font-family: $font_6, $font_7, $font_8, $font_9, $font_11
+    white-space: pre
+  .gist-file
+    margin-bottom: 1em
+    font-family: $font_6, $font_7, $font_8, $font_9, $font_10
+    border: 1px solid $color_alto_approx
+    border-bottom: 1px solid $color_celeste_approx
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 3px
+    &.gist-render
+      border: 0
+    &.scroll
+      .gist-data
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 30px
+        left: 0
+        overflow: scroll
+      .gist-meta
+        position: absolute
+        right: 0
+        bottom: 0
+        left: 0
+  .gist-meta
+    padding: 10px
+    overflow: hidden
+    font: 12px $font_1, $font_12, $font_4, $font_13, $font_5
+    color: $color_mountain_mist_approx
+    background-color: $color_black_haze_approx
+    a
+      font-weight: bold
+      color: $color_storm_dust_approx
+      text-decoration: none
+      box-shadow: none
+      &:hover
+        box-shadow: none
+  .gist-data
+    overflow: auto
+    word-wrap: normal
+    background-color: $white
+    border-bottom: 1px solid $color_alto_approx
+  .file-data
+    font-size: 12px
+    line-height: 1.4
+  .line-data
+    padding: .5em !important
+  .line-pre
+    padding: 0 !important
+    margin: 0 !important
+    font-family: $font_6, $font_7, $font_8, $font_9, $font_11
+    font-size: 100% !important
+    line-height: inherit !important
+    background: transparent !important
+    border: 0 !important
+  .gist-highlight
+    background: transparent !important
+  .line-numbers
+    padding: .5em
+    color: $color_silver_chalice_approx
+    text-align: right
+    background-color: $white
+    border-right: 1px solid $color_gallery_approx
+    line-height: 1.4
+  .line-number
+    display: block
+    clear: right
+  .gist-render iframe
+    width: 100%
