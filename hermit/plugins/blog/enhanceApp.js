@@ -1,6 +1,7 @@
 import { VLazyImagePlugin } from 'v-lazy-image'
 import VueLazyload from 'vue-lazyload'
 import Gist from '@theme/components/Gist'
+import { Tweet, Timeline, Moment } from 'vue-tweet-embed'
 import SvgIcon from '@theme/components/icons/SvgIcon'
 import LazyVideo from '@theme/components/LazyVideo'
 import { postsPrepare } from '@theme/utils/posts-prepare'
@@ -71,6 +72,91 @@ export default ({ Vue }) => {
     render(h, { props, parent }) {
       if (parent._isMounted) {
         return h(Gist, { props: props })
+      } else {
+        parent.$once('hook:mounted', () => {
+          parent.$forceUpdate()
+        })
+      }
+    }
+  })
+  // create tweet
+  Vue.component('Tweet', {
+    functional: true,
+
+    props: {
+      id: {
+        type: String,
+        default: ''
+      },
+      options: {
+        type: Object,
+        default: () => {
+          return {}
+        }
+      }
+    },
+
+    render(h, { props, parent }) {
+      if (parent._isMounted) {
+        return h(Tweet, { props: props })
+      } else {
+        parent.$once('hook:mounted', () => {
+          parent.$forceUpdate()
+        })
+      }
+    }
+  })
+  // create timeline
+  Vue.component('Timeline', {
+    functional: true,
+
+    props: {
+      id: {
+        type: String,
+        default: ''
+      },
+      options: {
+        type: Object,
+        default: () => {
+          return {}
+        }
+      },
+      sourceType: {
+        type: String,
+        default: 'profile'
+      }
+    },
+
+    render(h, { props, parent }) {
+      if (parent._isMounted) {
+        return h(Timeline, { props: props })
+      } else {
+        parent.$once('hook:mounted', () => {
+          parent.$forceUpdate()
+        })
+      }
+    }
+  })
+  // create moment
+  Vue.component('Moment', {
+    functional: true,
+
+    props: {
+      id: {
+        type: String,
+        default: ''
+      },
+      options: {
+        type: Object,
+        default: () => {
+          return {}
+        }
+      }
+    },
+
+    render(h, { props, parent }) {
+      if (parent._isMounted) {
+        return h(Moment, { props: props })
       } else {
         parent.$once('hook:mounted', () => {
           parent.$forceUpdate()

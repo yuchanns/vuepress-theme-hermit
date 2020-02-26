@@ -119,7 +119,27 @@ console.log(foo(5));
 
 <gist id="988908c955180b2b17221d61f8ef7ed1" name="embedGist.vue" />
 
-Use the built-in component `<gist id="the-gist-id" name="file-name-in-the-gist" />` to place video.
+Use the built-in component `<gist id="the-gist-id" name="file-name-in-the-gist" />` to embed gist.
+
+## Embed tweet
+### Tweet
+<tweet id="1232421783548067840" />
+
+Use the built-in component `<tweet id="the-tweet-id" :options="{ cards: 'hidden', theme: 'dark' }" />` to embed tweet.
+
+Embedded-Tweet Options Reference: [developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference](developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
+
+### Moment
+<moment id="650667182356082688" :options="{ limit: '2' }" />
+
+Use the built-in component `<moment id="650667182356082688" :options="{ limit: '3' }" />` to embed tweet moment.
+
+### Timeline
+<timeline id="Airamusume" :options="{ height: '500' }" />
+
+Use the built-in component `<timeline id="the-tweet-id" :options="{ height: '500' }" />` to embed tweet timeline.
+
+Embedded-Timeline Options Reference: [dev.twitter.com/web/embedded-timelines/parameters](dev.twitter.com/web/embedded-timelines/parameters)
 
 ## Tables
 
@@ -166,7 +186,7 @@ With a reference later in the document defining the URL location:
 
 <LazyVideo src="//player.bilibili.com/player.html?aid=30495570&cid=53225588&page=1" />
 
-Use the built-in component `<LazyVideo src="video_url" />` to place video.
+Use the built-in component `<LazyVideo src="video_url" />` to embed video.
 
 
 ## Plugins
