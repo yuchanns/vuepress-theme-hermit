@@ -3,6 +3,9 @@
 
 > *Star it plz if you like !*
 
+## ATTENTIN PLEASE
+**THIS REPO HAS BEEN ARCHIVED**
+
 ## WHY
 I really like this theme at a glance, but I think a Hugo blog is not my style though fastest it does, so I made it an implementation in Vuepress.
 
